@@ -1,0 +1,24 @@
+From: Markus Koschany <apo@debian.org>
+Date: Mon, 11 Jan 2021 23:06:19 +0100
+Subject: wasm-delegations
+
+Install missing wasm-delegations.h file.
+
+Origin: https://github.com/WebAssembly/binaryen/commit/0a1972b56a5bae9874808673041d3a48d3c86153
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 9a2744b..775fade 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -315,7 +315,7 @@ install(TARGETS binaryen
+   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
+ 
+-install(FILES src/binaryen-c.h DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
++install(FILES src/binaryen-c.h src/wasm-delegations.h DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+ 
+ function(binaryen_add_executable name sources)
+   add_executable(${name} ${sources})
